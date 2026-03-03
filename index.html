@@ -15,14 +15,9 @@
             --text-muted: #8b949e;
             --card-bg: #161b22;
             --border: #30363d;
-            --terminal-green: #00d4aa;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', 'JetBrains Mono', monospace;
@@ -41,25 +36,21 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Scroll reveal base state */
         .reveal {
             opacity: 0;
             transform: translateY(28px);
             transition: opacity 0.55s ease, transform 0.55s ease;
         }
-
         .reveal.visible {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* Staggered children inside a reveal parent */
         .reveal-stagger > * {
             opacity: 0;
             transform: translateY(24px);
             transition: opacity 0.5s ease, transform 0.5s ease;
         }
-
         .reveal-stagger.visible > *:nth-child(1) { opacity: 1; transform: none; transition-delay: 0.05s; }
         .reveal-stagger.visible > *:nth-child(2) { opacity: 1; transform: none; transition-delay: 0.12s; }
         .reveal-stagger.visible > *:nth-child(3) { opacity: 1; transform: none; transition-delay: 0.19s; }
@@ -79,7 +70,6 @@
             margin-left: 2px;
         }
 
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -97,22 +87,10 @@
             align-items: center;
         }
 
-        .nav-logo {
-            color: var(--accent);
-            font-weight: 700;
-            font-size: 1.1rem;
-        }
+        .nav-logo { color: var(--accent); font-weight: 700; font-size: 1.1rem; }
+        .nav-logo span { color: var(--text-muted); }
 
-        .nav-logo span {
-            color: var(--text-muted);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
         .nav-links a {
             color: var(--text-muted);
             text-decoration: none;
@@ -120,35 +98,19 @@
             transition: color 0.3s;
             position: relative;
         }
-
         .nav-links a::before {
             content: '~/ ';
             color: var(--accent);
             opacity: 0;
             transition: opacity 0.3s;
         }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--text-bright);
-        }
-
-        .nav-links a.active {
-            color: var(--accent);
-        }
-
+        .nav-links a:hover { color: var(--text-bright); }
+        .nav-links a.active { color: var(--accent); }
         .nav-links a:hover::before,
-        .nav-links a.active::before {
-            opacity: 1;
-        }
+        .nav-links a.active::before { opacity: 1; }
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
 
-        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -156,19 +118,10 @@
             padding-top: 80px;
         }
 
-        .hero-content {
-            animation: fadeInUp 0.8s ease-out;
-        }
+        .hero-content { animation: fadeInUp 0.8s ease-out; }
 
-        .hero-prompt {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .hero-prompt span {
-            color: var(--accent);
-        }
+        .hero-prompt { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .hero-prompt span { color: var(--accent); }
 
         .hero h1 {
             font-size: 3rem;
@@ -193,13 +146,7 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
-        .hero-links {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-
+        .hero-links { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
         .hero-links a {
             color: var(--text);
             text-decoration: none;
@@ -209,17 +156,13 @@
             border-radius: 6px;
             transition: all 0.3s;
         }
-
         .hero-links a:hover {
             border-color: var(--accent);
             color: var(--accent);
             background: rgba(0, 212, 170, 0.05);
         }
 
-        /* Section styles */
-        section {
-            padding: 5rem 0;
-        }
+        section { padding: 5rem 0; }
 
         .section-header {
             display: flex;
@@ -227,26 +170,10 @@
             gap: 1rem;
             margin-bottom: 3rem;
         }
+        .section-header h2 { font-size: 1.5rem; color: var(--text-bright); white-space: nowrap; }
+        .section-header h2 span { color: var(--accent); margin-right: 0.5rem; }
+        .section-header::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
-        .section-header h2 {
-            font-size: 1.5rem;
-            color: var(--text-bright);
-            white-space: nowrap;
-        }
-
-        .section-header h2 span {
-            color: var(--accent);
-            margin-right: 0.5rem;
-        }
-
-        .section-header::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: var(--border);
-        }
-
-        /* Skills Section */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -260,12 +187,7 @@
             padding: 1.5rem;
             transition: border-color 0.3s, transform 0.3s;
         }
-
-        .skill-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-2px);
-        }
-
+        .skill-card:hover { border-color: var(--accent); transform: translateY(-2px); }
         .skill-card h3 {
             color: var(--accent);
             font-size: 0.85rem;
@@ -274,12 +196,7 @@
             margin-bottom: 1rem;
         }
 
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
         .skill-tag {
             background: rgba(0, 212, 170, 0.08);
             color: var(--text);
@@ -289,27 +206,16 @@
             border: 1px solid rgba(0, 212, 170, 0.15);
         }
 
-        /* Experience Section */
-        .timeline {
-            position: relative;
-            padding-left: 2rem;
-        }
-
+        .timeline { position: relative; padding-left: 2rem; }
         .timeline::before {
             content: '';
             position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
+            left: 0; top: 0; bottom: 0;
             width: 2px;
             background: var(--border);
         }
 
-        .timeline-item {
-            position: relative;
-            margin-bottom: 3rem;
-        }
-
+        .timeline-item { position: relative; margin-bottom: 3rem; }
         .timeline-item::before {
             content: '';
             position: absolute;
@@ -322,48 +228,23 @@
             border: 2px solid var(--accent);
             transform: translateX(-5px);
         }
-
         .timeline-item:first-child::before {
             background: var(--accent);
             box-shadow: 0 0 8px rgba(0, 212, 170, 0.4);
         }
 
-        .timeline-meta {
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
-            margin-bottom: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .timeline-date {
-            color: var(--accent);
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        .timeline-company {
-            color: var(--text-bright);
-            font-size: 0.85rem;
-        }
-
+        .timeline-meta { display: flex; gap: 1.5rem; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap; }
+        .timeline-date { color: var(--accent); font-size: 0.85rem; font-weight: 600; }
+        .timeline-company { color: var(--text-bright); font-size: 0.85rem; }
         .timeline-item h3 {
             color: var(--text-bright);
             font-size: 1.1rem;
             margin-bottom: 0.3rem;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
+        .timeline-role { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
 
-        .timeline-role {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            margin-bottom: 1rem;
-        }
-
-        .timeline-tasks {
-            list-style: none;
-        }
-
+        .timeline-tasks { list-style: none; }
         .timeline-tasks li {
             position: relative;
             padding-left: 1.2rem;
@@ -373,7 +254,6 @@
             line-height: 1.6;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
-
         .timeline-tasks li::before {
             content: '>';
             position: absolute;
@@ -383,7 +263,6 @@
             font-weight: 700;
         }
 
-        /* Certifications */
         .certs-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -400,13 +279,8 @@
             gap: 1rem;
             transition: all 0.3s;
             text-decoration: none;
-            cursor: pointer;
         }
-
-        .cert-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-2px);
-        }
+        .cert-card:hover { border-color: var(--accent); transform: translateY(-2px); }
 
         .cert-icon {
             width: 40px;
@@ -419,11 +293,10 @@
             font-weight: 700;
             flex-shrink: 0;
         }
-
-        .cert-icon.aws { background: rgba(255, 153, 0, 0.15); color: #ff9900; }
-        .cert-icon.azure { background: rgba(0, 120, 212, 0.15); color: #0078d4; }
-        .cert-icon.hashi { background: rgba(99, 72, 232, 0.15); color: #6348e8; }
-        .cert-icon.k8s { background: rgba(50, 108, 229, 0.15); color: #326ce5; }
+        .cert-icon.aws   { background: rgba(255,153,0,0.15);  color: #ff9900; }
+        .cert-icon.azure { background: rgba(0,120,212,0.15);  color: #0078d4; }
+        .cert-icon.hashi { background: rgba(99,72,232,0.15);  color: #6348e8; }
+        .cert-icon.k8s   { background: rgba(50,108,229,0.15); color: #326ce5; }
 
         .cert-name {
             color: var(--text);
@@ -431,34 +304,26 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
-        /* Education */
         .edu-card {
             background: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: 8px;
             padding: 1.5rem 2rem;
         }
-
         .edu-card h3 {
             color: var(--text-bright);
             font-size: 1rem;
             margin-bottom: 1rem;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
-
-        .edu-list {
-            list-style: none;
-        }
-
+        .edu-list { list-style: none; }
         .edu-list li {
             color: var(--text-muted);
             font-size: 0.9rem;
-            padding: 0.3rem 0;
-            padding-left: 1.2rem;
+            padding: 0.3rem 0 0.3rem 1.2rem;
             position: relative;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
-
         .edu-list li::before {
             content: '>';
             position: absolute;
@@ -468,31 +333,26 @@
             font-weight: 700;
         }
 
-        /* Contact / Footer */
-        .contact-section {
-            text-align: center;
-            padding: 5rem 0;
+        .lang-pills { display: flex; gap: 1rem; margin-top: 1.5rem; }
+        .lang-pill {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 0.5rem 1.2rem;
+            font-size: 0.85rem;
+            color: var(--text);
         }
+        .lang-pill .level { color: var(--text-muted); font-size: 0.78rem; }
 
-        .contact-section h2 {
-            color: var(--text-bright);
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-
+        .contact-section { text-align: center; padding: 5rem 0; }
+        .contact-section h2 { color: var(--text-bright); font-size: 1.8rem; margin-bottom: 1rem; }
         .contact-section p {
             color: var(--text-muted);
             margin-bottom: 2rem;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-
+        .contact-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
         .contact-links a {
             color: var(--accent);
             text-decoration: none;
@@ -502,45 +362,11 @@
             border-radius: 6px;
             transition: all 0.3s;
         }
+        .contact-links a:hover { background: var(--accent); color: var(--dark-blue); }
 
-        .contact-links a:hover {
-            background: var(--accent);
-            color: var(--dark-blue);
-        }
+        footer { border-top: 1px solid var(--border); padding: 2rem 0; text-align: center; }
+        footer p { color: var(--text-muted); font-size: 0.8rem; }
 
-        footer {
-            border-top: 1px solid var(--border);
-            padding: 2rem 0;
-            text-align: center;
-        }
-
-        footer p {
-            color: var(--text-muted);
-            font-size: 0.8rem;
-        }
-
-        /* Languages pills */
-        .lang-pills {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .lang-pill {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 0.5rem 1.2rem;
-            font-size: 0.85rem;
-            color: var(--text);
-        }
-
-        .lang-pill .level {
-            color: var(--text-muted);
-            font-size: 0.78rem;
-        }
-
-        /* Mobile hamburger */
         .nav-toggle {
             display: none;
             background: none;
@@ -550,22 +376,19 @@
             cursor: pointer;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
             .hero h2 { font-size: 1rem; }
             .container { padding: 0 1.2rem; }
             .skills-grid { grid-template-columns: 1fr; }
             .certs-grid { grid-template-columns: 1fr; }
-
             .nav-toggle { display: block; }
             .nav-links {
                 display: none;
                 position: absolute;
                 top: 100%;
-                left: 0;
-                right: 0;
-                background: rgba(13, 27, 42, 0.98);
+                left: 0; right: 0;
+                background: rgba(13,27,42,0.98);
                 flex-direction: column;
                 padding: 1rem 2rem;
                 gap: 1rem;
@@ -578,7 +401,6 @@
 </head>
 <body>
 
-<!-- Navigation -->
 <nav>
     <div class="container">
         <div class="nav-logo">marjo<span>@devops</span>:~$<span class="cursor"></span></div>
@@ -593,7 +415,6 @@
     </div>
 </nav>
 
-<!-- Hero -->
 <section class="hero">
     <div class="container">
         <div class="hero-content">
@@ -607,15 +428,13 @@
                 and GitLab CI to ensure secure, scalable, and resilient platforms.
             </p>
             <div class="hero-links">
-                <a href="/cdn-cgi/l/email-protection#076a66756e68686b6b62746f6e47606a666e6b2964686a"><span class="__cf_email__" data-cfemail="345955465d5b5b585851475c5d745359555d581a575b59">[email&#160;protected]</span></a>
+                <a href="mailto:marioolleshi@gmail.com">marioolleshi@gmail.com</a>
                 <a href="https://www.linkedin.com/in/marjo-lleshi-a29662145/" target="_blank" rel="noopener">LinkedIn</a>
-
             </div>
         </div>
     </div>
 </section>
 
-<!-- Skills -->
 <section id="skills">
     <div class="container">
         <div class="section-header reveal">
@@ -638,7 +457,7 @@
                 </div>
             </div>
             <div class="skill-card">
-                <h3>Containers & Orchestration</h3>
+                <h3>Containers &amp; Orchestration</h3>
                 <div class="skill-tags">
                     <span class="skill-tag">Docker</span>
                     <span class="skill-tag">Kubernetes</span>
@@ -649,7 +468,7 @@
                 </div>
             </div>
             <div class="skill-card">
-                <h3>DevOps & Automation</h3>
+                <h3>DevOps &amp; Automation</h3>
                 <div class="skill-tags">
                     <span class="skill-tag">GitLab CI/CD</span>
                     <span class="skill-tag">ArgoCD</span>
@@ -657,7 +476,7 @@
                 </div>
             </div>
             <div class="skill-card">
-                <h3>Security & Identity</h3>
+                <h3>Security &amp; Identity</h3>
                 <div class="skill-tags">
                     <span class="skill-tag">HashiCorp Vault</span>
                     <span class="skill-tag">Keycloak</span>
@@ -666,7 +485,7 @@
                 </div>
             </div>
             <div class="skill-card">
-                <h3>Monitoring & Observability</h3>
+                <h3>Monitoring &amp; Observability</h3>
                 <div class="skill-tags">
                     <span class="skill-tag">Prometheus</span>
                     <span class="skill-tag">Grafana</span>
@@ -674,7 +493,7 @@
                 </div>
             </div>
             <div class="skill-card">
-                <h3>Programming & Scripting</h3>
+                <h3>Programming &amp; Scripting</h3>
                 <div class="skill-tags">
                     <span class="skill-tag">Bash</span>
                     <span class="skill-tag">Python</span>
@@ -692,7 +511,6 @@
     </div>
 </section>
 
-<!-- Experience -->
 <section id="experience">
     <div class="container">
         <div class="section-header reveal">
@@ -704,8 +522,8 @@
                     <span class="timeline-date">06/2024 &ndash; Present</span>
                     <span class="timeline-company">Lufthansa Industry Solutions</span>
                 </div>
-                <h3>Identity & Access Management, Secrets Management, Cloud Infrastructure Automation</h3>
-                <p class="timeline-role">Platform Engineer &middot; Application Management & DevOps</p>
+                <h3>Identity &amp; Access Management, Secrets Management, Cloud Infrastructure Automation</h3>
+                <p class="timeline-role">Platform Engineer &middot; Application Management &amp; DevOps</p>
                 <ul class="timeline-tasks">
                     <li>Designed and implemented enterprise-wide SSO with Keycloak on OpenShift, integrating with Microsoft Entra ID (Azure AD) and LDAP, enabling secure access for thousands of users across multiple applications.</li>
                     <li>Managed Keycloak realms, roles, and federation with external IdPs, establishing fine-grained RBAC and improving audit compliance.</li>
@@ -723,7 +541,7 @@
                     <span class="timeline-company">Integrated Tech Solutions</span>
                 </div>
                 <h3>Containerized Environments &amp; Cloud Infrastructure</h3>
-                <p class="timeline-role">DevOps Engineer &middot; Application Management & DevOps</p>
+                <p class="timeline-role">DevOps Engineer &middot; Application Management &amp; DevOps</p>
                 <ul class="timeline-tasks">
                     <li>Containerized multiple business applications with Docker and Kubernetes, enabling faster deployments and consistent environments.</li>
                     <li>Designed and deployed highly available Kubernetes clusters (kubeadm, EKS, AKS), configuring networking and observability to support mission-critical workloads.</li>
@@ -740,7 +558,7 @@
                     <span class="timeline-company">Varg.io</span>
                 </div>
                 <h3>Blockchain Infrastructure &amp; Cloud-Native Platforms</h3>
-                <p class="timeline-role">DevOps Engineer &middot; Application Management & DevOps</p>
+                <p class="timeline-role">DevOps Engineer &middot; Application Management &amp; DevOps</p>
                 <ul class="timeline-tasks">
                     <li>Deployed and maintained Kubernetes clusters in AWS environments, ensuring high availability and scalability for blockchain infrastructure workloads.</li>
                     <li>Implemented GitOps workflows with Argo CD and GitLab CI/CD pipelines, automating deployment and configuration of blockchain services.</li>
@@ -754,7 +572,6 @@
     </div>
 </section>
 
-<!-- Certifications -->
 <section id="certifications">
     <div class="container">
         <div class="section-header reveal">
@@ -785,7 +602,6 @@
     </div>
 </section>
 
-<!-- Education -->
 <section id="education">
     <div class="container">
         <div class="section-header reveal">
@@ -805,13 +621,12 @@
     </div>
 </section>
 
-<!-- Contact -->
 <section id="contact" class="contact-section">
     <div class="container">
         <h2 class="reveal">Get In Touch</h2>
         <p class="reveal">Interested in working together? Let's connect.</p>
         <div class="contact-links reveal">
-            <a href="/cdn-cgi/l/email-protection#650804170c0a0a090900160d0c250208040c094b060a08">Email</a>
+            <a href="mailto:marioolleshi@gmail.com">Email</a>
             <a href="https://www.linkedin.com/in/marjo-lleshi-a29662145/" target="_blank" rel="noopener">LinkedIn</a>
         </div>
     </div>
@@ -823,20 +638,18 @@
     </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    // ── Scroll reveal ──────────────────────────────────────────────
+<script>
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target); // fire once
+                observer.unobserve(entry.target);
             }
         });
     }, { threshold: 0.12 });
 
     document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => observer.observe(el));
 
-    // ── Active nav link on scroll ──────────────────────────────────
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-links a');
 
@@ -844,4 +657,14 @@
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 navLinks.forEach(link => link.classList.remove('active'));
-               
+                const active = document.querySelector('.nav-links a[href="#' + entry.target.id + '"]');
+                if (active) active.classList.add('active');
+            }
+        });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+
+    sections.forEach(s => navObserver.observe(s));
+</script>
+
+</body>
+</html>
