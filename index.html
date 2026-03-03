@@ -31,7 +31,6 @@
             line-height: 1.6;
         }
 
-        /* Terminal-style cursor blink */
         @keyframes blink {
             0%, 50% { opacity: 1; }
             51%, 100% { opacity: 0; }
@@ -42,10 +41,33 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes typewriter {
-            from { width: 0; }
-            to { width: 100%; }
+        /* Scroll reveal base state */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.55s ease, transform 0.55s ease;
         }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staggered children inside a reveal parent */
+        .reveal-stagger > * {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .reveal-stagger.visible > *:nth-child(1) { opacity: 1; transform: none; transition-delay: 0.05s; }
+        .reveal-stagger.visible > *:nth-child(2) { opacity: 1; transform: none; transition-delay: 0.12s; }
+        .reveal-stagger.visible > *:nth-child(3) { opacity: 1; transform: none; transition-delay: 0.19s; }
+        .reveal-stagger.visible > *:nth-child(4) { opacity: 1; transform: none; transition-delay: 0.26s; }
+        .reveal-stagger.visible > *:nth-child(5) { opacity: 1; transform: none; transition-delay: 0.33s; }
+        .reveal-stagger.visible > *:nth-child(6) { opacity: 1; transform: none; transition-delay: 0.40s; }
+        .reveal-stagger.visible > *:nth-child(7) { opacity: 1; transform: none; transition-delay: 0.47s; }
+        .reveal-stagger.visible > *:nth-child(8) { opacity: 1; transform: none; transition-delay: 0.54s; }
 
         .cursor {
             display: inline-block;
@@ -106,11 +128,17 @@
             transition: opacity 0.3s;
         }
 
-        .nav-links a:hover {
+        .nav-links a:hover,
+        .nav-links a.active {
             color: var(--text-bright);
         }
 
-        .nav-links a:hover::before {
+        .nav-links a.active {
+            color: var(--accent);
+        }
+
+        .nav-links a:hover::before,
+        .nav-links a.active::before {
             opacity: 1;
         }
 
@@ -167,8 +195,9 @@
 
         .hero-links {
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
             flex-wrap: wrap;
+            align-items: center;
         }
 
         .hero-links a {
@@ -229,7 +258,7 @@
             border: 1px solid var(--border);
             border-radius: 8px;
             padding: 1.5rem;
-            transition: all 0.3s;
+            transition: border-color 0.3s, transform 0.3s;
         }
 
         .skill-card:hover {
@@ -279,7 +308,6 @@
         .timeline-item {
             position: relative;
             margin-bottom: 3rem;
-            animation: fadeInUp 0.6s ease-out;
         }
 
         .timeline-item::before {
@@ -579,9 +607,9 @@
                 and GitLab CI to ensure secure, scalable, and resilient platforms.
             </p>
             <div class="hero-links">
-                <a href="mailto:marioolleshi@gmail.com">marioolleshi@gmail.com</a>
+                <a href="/cdn-cgi/l/email-protection#076a66756e68686b6b62746f6e47606a666e6b2964686a"><span class="__cf_email__" data-cfemail="345955465d5b5b585851475c5d745359555d581a575b59">[email&#160;protected]</span></a>
                 <a href="https://www.linkedin.com/in/marjo-lleshi-a29662145/" target="_blank" rel="noopener">LinkedIn</a>
-                <a href="tel:+355692916523">+355 692 916 523</a>
+
             </div>
         </div>
     </div>
@@ -590,10 +618,10 @@
 <!-- Skills -->
 <section id="skills">
     <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
             <h2><span>#</span> Core Skills</h2>
         </div>
-        <div class="skills-grid">
+        <div class="skills-grid reveal-stagger">
             <div class="skill-card">
                 <h3>Cloud Platforms</h3>
                 <div class="skill-tags">
@@ -667,12 +695,11 @@
 <!-- Experience -->
 <section id="experience">
     <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
             <h2><span>#</span> Experience</h2>
         </div>
         <div class="timeline">
-            <!-- Lufthansa -->
-            <div class="timeline-item">
+            <div class="timeline-item reveal">
                 <div class="timeline-meta">
                     <span class="timeline-date">06/2024 &ndash; Present</span>
                     <span class="timeline-company">Lufthansa Industry Solutions</span>
@@ -690,8 +717,7 @@
                 </ul>
             </div>
 
-            <!-- Integrated Tech Solutions -->
-            <div class="timeline-item">
+            <div class="timeline-item reveal">
                 <div class="timeline-meta">
                     <span class="timeline-date">07/2022 &ndash; 06/2024</span>
                     <span class="timeline-company">Integrated Tech Solutions</span>
@@ -708,8 +734,7 @@
                 </ul>
             </div>
 
-            <!-- Varg.io -->
-            <div class="timeline-item">
+            <div class="timeline-item reveal">
                 <div class="timeline-meta">
                     <span class="timeline-date">07/2020 &ndash; 02/2022</span>
                     <span class="timeline-company">Varg.io</span>
@@ -732,10 +757,10 @@
 <!-- Certifications -->
 <section id="certifications">
     <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
             <h2><span>#</span> Certifications</h2>
         </div>
-        <div class="certs-grid">
+        <div class="certs-grid reveal-stagger">
             <a class="cert-card" href="https://www.credly.com/badges/a36efab6-142d-4db5-9d55-d70f1e3d5e8f/linked_in_profile" target="_blank" rel="noopener">
                 <div class="cert-icon azure">AZ</div>
                 <span class="cert-name">Microsoft Certified: Azure Fundamentals</span>
@@ -763,17 +788,17 @@
 <!-- Education -->
 <section id="education">
     <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
             <h2><span>#</span> Education</h2>
         </div>
-        <div class="edu-card">
+        <div class="edu-card reveal">
             <h3>Aleksander Moisiu University, Albania</h3>
             <ul class="edu-list">
                 <li>Master of Science in Applied Computer Science</li>
                 <li>Bachelor of Science in Information Technology</li>
             </ul>
         </div>
-        <div class="lang-pills">
+        <div class="lang-pills reveal">
             <span class="lang-pill">Albanian <span class="level">&middot; Native</span></span>
             <span class="lang-pill">English <span class="level">&middot; Business Fluent</span></span>
         </div>
@@ -783,10 +808,10 @@
 <!-- Contact -->
 <section id="contact" class="contact-section">
     <div class="container">
-        <h2>Get In Touch</h2>
-        <p>Interested in working together? Let's connect.</p>
-        <div class="contact-links">
-            <a href="mailto:marioolleshi@gmail.com">Email</a>
+        <h2 class="reveal">Get In Touch</h2>
+        <p class="reveal">Interested in working together? Let's connect.</p>
+        <div class="contact-links reveal">
+            <a href="/cdn-cgi/l/email-protection#650804170c0a0a090900160d0c250208040c094b060a08">Email</a>
             <a href="https://www.linkedin.com/in/marjo-lleshi-a29662145/" target="_blank" rel="noopener">LinkedIn</a>
         </div>
     </div>
@@ -798,5 +823,24 @@
     </div>
 </footer>
 
-</body>
-</html>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // ── Scroll reveal ──────────────────────────────────────────────
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // fire once
+            }
+        });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => observer.observe(el));
+
+    // ── Active nav link on scroll ──────────────────────────────────
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    const navObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navLinks.forEach(link => link.classList.remove('active'));
