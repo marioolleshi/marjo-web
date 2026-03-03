@@ -4,6 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marjo Lleshi - Platform/DevOps Engineer</title>
+
+    <!-- OG Meta Tags -->
+    <meta property="og:title" content="Marjo Lleshi - Platform/DevOps Engineer" />
+    <meta property="og:description" content="Platform / DevOps Engineer with 5+ years of experience building and scaling cloud-native platforms across AWS and Azure." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://marioolleshi.github.io" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Marjo Lleshi - Platform/DevOps Engineer" />
+    <meta name="twitter:description" content="Platform / DevOps Engineer with 5+ years of experience building and scaling cloud-native platforms across AWS and Azure." />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230d1b2a'/><text x='4' y='22' font-family='monospace' font-size='16' font-weight='bold' fill='%2300d4aa'>%3E_</text></svg>" />
+
     <style>
         :root {
             --navy: #1a2332;
@@ -167,9 +180,7 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
-        .hero-links a.link-github {
-            border-color: #30363d;
-        }
+        .hero-links a.link-github { border-color: #30363d; }
         .hero-links a.link-github:hover {
             border-color: #e6edf3;
             color: #e6edf3;
@@ -185,9 +196,7 @@
             border-color: #5ba4f5;
             color: #fff;
         }
-        .hero-links a.link-email {
-            border-color: var(--border);
-        }
+        .hero-links a.link-email { border-color: var(--border); }
         .hero-links a.link-email:hover {
             border-color: var(--accent);
             color: var(--accent);
@@ -385,17 +394,44 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
-        .contact-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+        .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
         .contact-links a {
-            color: var(--accent);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             text-decoration: none;
             font-size: 0.9rem;
             padding: 0.7rem 1.5rem;
-            border: 1px solid var(--accent);
-            border-radius: 6px;
-            transition: all 0.3s;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: var(--card-bg);
+            color: var(--text);
+            transition: all 0.25s;
+            font-family: 'SF Mono', 'Fira Code', monospace;
         }
-        .contact-links a:hover { background: var(--accent); color: var(--dark-blue); }
+        .contact-links a:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+        .contact-links a.link-linkedin {
+            border-color: #0a66c2;
+            color: #5ba4f5;
+            background: rgba(10,102,194,0.1);
+        }
+        .contact-links a.link-linkedin:hover {
+            background: rgba(10,102,194,0.2);
+            border-color: #5ba4f5;
+            color: #fff;
+        }
+        .contact-links a.link-github { border-color: #30363d; }
+        .contact-links a.link-github:hover {
+            border-color: #e6edf3;
+            color: #e6edf3;
+            background: rgba(230,237,243,0.05);
+        }
+        .contact-links a.link-email:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: rgba(0,212,170,0.05);
+        }
+        .contact-links svg { width: 16px; height: 16px; flex-shrink: 0; }
 
         footer { border-top: 1px solid var(--border); padding: 2rem 0; text-align: center; }
         footer p { color: var(--text-muted); font-size: 0.8rem; }
@@ -455,7 +491,7 @@
             <h1>Marjo Lleshi</h1>
             <h2>Platform / DevOps Engineer</h2>
             <p class="hero-summary">
-                Platform / DevOps Engineer with 5+ years of experience building and scaling cloud-native platforms across AWS and Azure. 
+                Platform / DevOps Engineer with 5+ years of experience building and scaling cloud-native platforms across AWS and Azure.
                 Expertise in Kubernetes ecosystems, Infrastructure as Code, CI/CD automation, and GitOps practices to deliver secure, scalable, and resilient systems.
             </p>
             <div class="hero-links">
@@ -669,8 +705,18 @@
         <h2 class="reveal">Get In Touch</h2>
         <p class="reveal">Interested in working together? Let's connect.</p>
         <div class="contact-links reveal">
-            <a href="mailto:marioolleshi@gmail.com">Email</a>
-            <a href="https://www.linkedin.com/in/marjo-lleshi-a29662145/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/marjo-lleshi-a29662145/" target="_blank" rel="noopener" class="link-linkedin">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+            </a>
+            <a href="https://github.com/marioolleshi" target="_blank" rel="noopener" class="link-github">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                GitHub
+            </a>
+            <a href="mailto:marioolleshi@gmail.com" class="link-email">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                Email
+            </a>
         </div>
     </div>
 </section>
