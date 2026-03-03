@@ -90,24 +90,26 @@
         .nav-logo { color: var(--accent); font-weight: 700; font-size: 1.1rem; }
         .nav-logo span { color: var(--text-muted); }
 
-        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links { display: flex; list-style: none; gap: 0.5rem; }
         .nav-links a {
             color: var(--text-muted);
             text-decoration: none;
-            font-size: 0.85rem;
-            transition: color 0.3s;
-            position: relative;
+            font-size: 0.8rem;
+            padding: 0.35rem 0.9rem;
+            border-radius: 20px;
+            border: 1px solid transparent;
+            transition: all 0.25s;
         }
-        .nav-links a::before {
-            content: '~/ ';
+        .nav-links a:hover {
+            color: var(--text-bright);
+            border-color: var(--border);
+            background: rgba(255,255,255,0.04);
+        }
+        .nav-links a.active {
             color: var(--accent);
-            opacity: 0;
-            transition: opacity 0.3s;
+            border-color: var(--accent);
+            background: rgba(0, 212, 170, 0.08);
         }
-        .nav-links a:hover { color: var(--text-bright); }
-        .nav-links a.active { color: var(--accent); }
-        .nav-links a:hover::before,
-        .nav-links a.active::before { opacity: 1; }
 
         .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
 
@@ -146,21 +148,52 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
-        .hero-links { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+        .hero-links { display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center; }
         .hero-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             color: var(--text);
             text-decoration: none;
             font-size: 0.85rem;
             padding: 0.6rem 1.2rem;
             border: 1px solid var(--border);
-            border-radius: 6px;
-            transition: all 0.3s;
+            border-radius: 8px;
+            background: var(--card-bg);
+            transition: all 0.25s;
+            font-family: 'SF Mono', 'Fira Code', monospace;
         }
         .hero-links a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .hero-links a.link-github {
+            border-color: #30363d;
+        }
+        .hero-links a.link-github:hover {
+            border-color: #e6edf3;
+            color: #e6edf3;
+            background: rgba(230,237,243,0.05);
+        }
+        .hero-links a.link-linkedin {
+            border-color: #0a66c2;
+            color: #5ba4f5;
+            background: rgba(10,102,194,0.1);
+        }
+        .hero-links a.link-linkedin:hover {
+            background: rgba(10,102,194,0.2);
+            border-color: #5ba4f5;
+            color: #fff;
+        }
+        .hero-links a.link-email {
+            border-color: var(--border);
+        }
+        .hero-links a.link-email:hover {
             border-color: var(--accent);
             color: var(--accent);
-            background: rgba(0, 212, 170, 0.05);
+            background: rgba(0,212,170,0.05);
         }
+        .hero-links svg { width: 16px; height: 16px; flex-shrink: 0; }
 
         section { padding: 5rem 0; }
 
@@ -422,8 +455,10 @@
             <h1>Marjo Lleshi</h1>
             <h2>Platform / DevOps Engineer</h2>
             <p class="hero-summary">
-                Platform / DevOps Engineer with 5+ years of experience building and scaling cloud-native platforms across AWS and Azure. 
-                Expertise in Kubernetes ecosystems, Infrastructure as Code, CI/CD automation, and GitOps practices to deliver secure, scalable, and resilient systems.
+                5+ years of experience developing and automating cloud-native infrastructure across AWS and Azure.
+                Skilled in microservices architecture with Docker, Kubernetes, and Istio, and specialized in
+                Infrastructure as Code and CI/CD automation. Experienced in adopting GitOps practices with Argo CD
+                and GitLab CI to ensure secure, scalable, and resilient platforms.
             </p>
             <div class="hero-links">
                 <a href="mailto:marioolleshi@gmail.com">marioolleshi@gmail.com</a>
@@ -469,7 +504,6 @@
                 <h3>DevOps &amp; Automation</h3>
                 <div class="skill-tags">
                     <span class="skill-tag">GitLab CI/CD</span>
-                    <span class="skill-tag">GitHub</span>
                     <span class="skill-tag">ArgoCD</span>
                     <span class="skill-tag">GitOps</span>
                 </div>
@@ -488,8 +522,7 @@
                 <div class="skill-tags">
                     <span class="skill-tag">Prometheus</span>
                     <span class="skill-tag">Grafana</span>
-                    <span class="skill-tag">Elasticsearch</span>
-                    <span class="skill-tag">OpenTelemetry</span>
+                    <span class="skill-tag">CloudWatch</span>
                 </div>
             </div>
             <div class="skill-card">
